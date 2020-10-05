@@ -14,3 +14,9 @@ Load these columns to memory and pass them to the `TrainDataLoader` class.
 ```bash
 python run_training.py
 ```
+
+### Run tests
+
+```bash
+python -m pytest
+```
