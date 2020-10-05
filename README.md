@@ -6,7 +6,7 @@ This repository contains the code for an example text dataloader for sentence si
 ### Dataset preparation
 
 The dataset should contain at least three columns. Two columns should contain the text of sentences to compare. The third column should contain the scores of similarity between the respective sentences for training.
-Load these columns into memory, preapre a `SimpleTokenizer` object and pass them to the `TrainDataLoader` class. Then you can start iterating through the batched dataset.
+Load these columns into memory, preapre a `SimpleTokenizer` object and pass them to the `TrainDataLoader` class. Then you can start iterating through the processed, batched dataset.
 
 ### Example usage
 
