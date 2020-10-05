@@ -1,2 +1,2 @@
-tqdm
-pytest
+tqdm==4.48.2
+pytest==6.1.1
