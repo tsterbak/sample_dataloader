@@ -5,6 +5,16 @@ from src.tokenizer import SimpleTokenizer
 
 
 class TrainDataLoader(object):
+    """Dataloader for similarity training.
+
+    :params:
+        :sentences1: List of input sentences.
+        :sentences2: Second list of input sentences to campare with the first.
+        :scores:     Similarity scores between the respective sentences.
+        :tokenizer:  Fitted tokenizer.
+        :batch_size: Number of samples to return per batch.
+        :shuffle:    If the dataset should be shuffled.
+    """
 
     def __init__(self, sentences1: List[str], sentences2: List[str], scores: List[float],
                  tokenizer: SimpleTokenizer, batch_size: int = 16, shuffle: bool = True):
@@ -12,6 +22,7 @@ class TrainDataLoader(object):
             raise ValueError("Input length mismatch.")
         if len(sentences1) != len(scores):
             raise ValueError("Input length mismatch.")
+
         self.sentences1 = sentences1
         self.sentences2 = sentences2
         self.scores = scores
@@ -20,7 +31,7 @@ class TrainDataLoader(object):
         self.tokenizer = tokenizer
 
     def process(self):
-        """Tokenize and optional shuffle the data."""
+        """Tokenize and optionally shuffle the data."""
         self.processed_sentences1 = [self.tokenizer.text_to_tokenids(s) for s in self.sentences1]
         self.processed_sentences2 = [self.tokenizer.text_to_tokenids(s) for s in self.sentences2]
         self.processed_scores = self.scores.copy()

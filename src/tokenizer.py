@@ -3,6 +3,15 @@ from typing import List
 
 
 class SimpleTokenizer(object):
+    """Simple whitespace tokenizer class.
+
+    Split the input text by whitespace characters.
+
+    :params:
+        :max_length: Maximum length of the processed text. Pad accordingly.
+        :padid:      Token id of the padding token.
+        :unknownid:  Token id of the unknown word token.
+    """
 
     def __init__(self, max_length: int = 20, padid: int = 0, unknownid: int = 1):
         self.max_length = max_length
