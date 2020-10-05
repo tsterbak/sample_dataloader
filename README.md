@@ -5,8 +5,24 @@ This repository contains the code for an example text dataloader for sentence si
 
 ### Dataset preparation
 
-The dataset should contain at least three columns. Two columns should contain the text of sentences to compare. The third column should contain the similarity scores for supervised training.
-Load these columns to memory and pass them to the `TrainDataLoader` class.
+The dataset should contain at least three columns. Two columns should contain the text of sentences to compare. The third column should contain the scores of similarity between the respective sentences for training.
+Load these columns into memory and pass them to the `TrainDataLoader` class. Then you can start iterating through the batched dataset.
+
+### Example usage
+
+```python
+dl = TrainDataLoader(
+  sentences1,
+  sentences2,
+  scores,
+  tokenizer=prepared_tokenizer,
+  batch_size=16,
+  shuffle=True
+)
+
+for batch in dl:
+  # do something with the batch of data
+```
 
 
 ### Run the code
