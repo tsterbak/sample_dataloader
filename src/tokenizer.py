@@ -8,7 +8,7 @@ class SimpleTokenizer(object):
     Split the input text by whitespace characters.
 
     :params:
-        :max_length: Maximum length of the processed text. Pad accordingly.
+        :max_length: Maximum length of the processed text. Pad or truncate accordingly.
         :padid:      Token id of the padding token.
         :unknownid:  Token id of the unknown word token.
     """
